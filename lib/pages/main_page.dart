@@ -6,7 +6,6 @@ import 'package:goroda/models/city_model.dart';
 import 'package:goroda/pages/error_page.dart';
 import 'package:goroda/pages/street_page.dart';
 import 'package:http/http.dart' as http;
-import 'package:http/http.dart';
 import 'package:intl/intl.dart';
 
 class MainPage extends StatefulWidget {
@@ -20,7 +19,7 @@ class _MainPageState extends State<MainPage> {
   Future<List<City>> fetchCities() async {
     Uri url =
         Uri.parse('https://649befbd0480757192372825.mockapi.io/api/v1/cities');
-    Response response = await http.get(url);
+    http.Response response = await http.get(url);
 
     List<City> cities = [];
 
